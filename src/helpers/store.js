@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import loggerMiddleware from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
-export const store = createStore(
+const store = createStore(
     combineReducers({
         
     }),
@@ -11,3 +11,5 @@ export const store = createStore(
         thunkMiddleware
     )
 );
+
+export default store;
