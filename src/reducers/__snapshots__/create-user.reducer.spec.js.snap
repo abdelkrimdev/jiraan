@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create user reducer should handle create user failure. 1`] = `
+Object {
+  "error": Object {
+    "code": "error/code",
+    "message": "Create User Error Message",
+  },
+  "fetching": false,
+}
+`;
+
+exports[`create user reducer should handle create user request. 1`] = `
+Object {
+  "fetching": true,
+}
+`;
+
+exports[`create user reducer should handle create user success. 1`] = `
+Object {
+  "fetching": false,
+  "user": Object {
+    "displayName": "username",
+    "email": "user@somewhere.com",
+  },
+}
+`;
+
+exports[`create user reducer should have initial state. 1`] = `Object {}`;
+
+exports[`create user reducer should return the current state after receiving a dummy action. 1`] = `
+Object {
+  "data": "current state",
+}
+`;
