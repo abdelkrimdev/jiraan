@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authentication actions should capture sign-in errors. 1`] = `
+Array [
+  Object {
+    "type": "FETCH_LOGIN_USER_REQUEST",
+  },
+  Object {
+    "error": Object {
+      "code": "error/code",
+      "message": "Login User Error Message",
+    },
+    "type": "FETCH_LOGIN_USER_FAILURE",
+  },
+]
+`;
+
+exports[`authentication actions should capture sign-up errors. 1`] = `
+Array [
+  Object {
+    "type": "FETCH_CREATE_USER_REQUEST",
+  },
+  Object {
+    "error": Object {
+      "code": "error/code",
+      "message": "Create User Error Message",
+    },
+    "type": "FETCH_CREATE_USER_FAILURE",
+  },
+]
+`;
+
+exports[`authentication actions should create a user with email and password. 1`] = `
+Array [
+  Object {
+    "type": "FETCH_CREATE_USER_REQUEST",
+  },
+  Object {
+    "type": "FETCH_CREATE_USER_SUCCESS",
+    "user": Object {
+      "displayName": "username",
+      "email": "user@somewhere.com",
+    },
+  },
+]
+`;
+
+exports[`authentication actions should get the current user. 1`] = `
+Array [
+  Object {
+    "type": "FIRE_CURRENT_USER_ACTION",
+    "user": Object {
+      "displayName": "username",
+      "email": "user@somewhere.com",
+    },
+  },
+]
+`;
+
+exports[`authentication actions should login a user with email and password. 1`] = `
+Array [
+  Object {
+    "type": "FETCH_LOGIN_USER_REQUEST",
+  },
+  Object {
+    "type": "FETCH_LOGIN_USER_SUCCESS",
+    "user": Object {
+      "displayName": "username",
+      "email": "user@somewhere.com",
+    },
+  },
+]
+`;
+
+exports[`authentication actions should logout the user. 1`] = `
+Array [
+  Object {
+    "type": "FIRE_LOGOUT_USER_ACTION",
+  },
+]
+`;
