@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login user reducer should handle login user failure. 1`] = `
+Object {
+  "error": Object {
+    "code": "error/code",
+    "message": "Login User Error Message",
+  },
+  "fetching": false,
+}
+`;
+
+exports[`login user reducer should handle login user request. 1`] = `
+Object {
+  "fetching": true,
+}
+`;
+
+exports[`login user reducer should handle login user success. 1`] = `
+Object {
+  "fetching": false,
+  "user": Object {
+    "displayName": "username",
+    "email": "user@somewhere.com",
+  },
+}
+`;
+
+exports[`login user reducer should have initial state. 1`] = `Object {}`;
+
+exports[`login user reducer should return the current state after receiving a dummy action. 1`] = `
+Object {
+  "data": "current state",
+}
+`;
