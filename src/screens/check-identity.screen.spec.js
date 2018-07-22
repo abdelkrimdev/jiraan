@@ -30,9 +30,7 @@ describe('check identity screen', () => {
 
     it('should dispatch the getCurrentUser action when component is mounting.', () => {
         const store = mockStore({
-            currentUser: {
-                data: null
-            }
+            currentUser: { data: null }
         });
 
         const container = shallow(<ConnectedCheckIdentity navigation={ navigation } store={ store } />).dive();
