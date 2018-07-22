@@ -8,7 +8,7 @@ export const signIn = (email, password) => {
     return firebase.auth().signInWithEmailAndPassword(email, password);
 };
 
-export const currentUser = () => {
+export const getCurrentUser = () => {
     return firebase.auth().currentUser;
 };
 
