@@ -1,5 +1,5 @@
 import { authenticationConstants } from '../constants/authentication.constants';
-import { currentUser, signIn, signOut, signUp } from '../services/authentication.service';
+import { getCurrentUser, signIn, signOut, signUp } from '../services/authentication.service';
 
 export const authenticationActions = {
     signUp: (email, password) => {
@@ -48,10 +48,10 @@ export const authenticationActions = {
             return { type: authenticationConstants.USER_LOGIN_FAILURE, error };
         }
     },
-    currentUser: () => {
+    getCurrentUser: () => {
         return {
             type: authenticationConstants.USER_CURRENT_ACTION,
-            user: currentUser()
+            user: getCurrentUser()
         };
     },
     signOut: () => {

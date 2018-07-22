@@ -2,7 +2,7 @@ import configureStore from 'redux-mock-store';
 import thunkMiddleware from 'redux-thunk';
 
 import { authenticationActions } from './authentication.actions';
-import { currentUser, signIn, signOut, signUp } from '../services/authentication.service';
+import { getCurrentUser, signIn, signOut, signUp } from '../services/authentication.service';
 
 jest.mock('../services/authentication.service');
 const mockStore = configureStore([ thunkMiddleware ]);
@@ -87,14 +87,14 @@ describe('authentication actions', () => {
     it('should get the current user.', () => {
         const store = mockStore({  });
 
-        currentUser.mockReturnValue({
+        getCurrentUser.mockReturnValue({
             displayName: "username",
             email: "user@somewhere.com"
         });
 
-        store.dispatch(authenticationActions.currentUser());
+        store.dispatch(authenticationActions.getCurrentUser());
 
-        expect(currentUser).toHaveBeenCalled();
+        expect(getCurrentUser).toHaveBeenCalled();
         expect(store.getActions()).toMatchSnapshot();
     });
 
