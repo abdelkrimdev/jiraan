@@ -48,7 +48,7 @@ Array [
 exports[`authentication actions should get the current user. 1`] = `
 Array [
   Object {
-    "type": "FIRE_CURRENT_USER_ACTION",
+    "type": "FIRE_GET_CURRENT_USER_ACTION",
     "user": Object {
       "displayName": "username",
       "email": "user@somewhere.com",
