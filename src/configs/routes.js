@@ -4,12 +4,12 @@ import CheckIdentityScreen from '../screens/check-identity.screen';
 import SignIn from '../screens/SignIn';
 import Home from '../screens/Home';
 
-const authStack = createStackNavigator(
+const authenticationStack = createStackNavigator(
     { SignIn: SignIn },
     { initialRouteName: 'SignIn' }
 );
 
-const appStack = createStackNavigator(
+const applicationStack = createStackNavigator(
     { Home: Home },
     { initialRouteName: 'Home' }
 );
@@ -17,8 +17,8 @@ const appStack = createStackNavigator(
 const routes = createSwitchNavigator(
     {
         Check: CheckIdentityScreen,
-        Auth: authStack,
-        App: appStack
+        Auth: authenticationStack,
+        App: applicationStack
     },
     { initialRouteName: 'Check' }
 );
