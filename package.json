@@ -12,7 +12,13 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
@@ -26,9 +32,12 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "jest-expo": "~27.0.0",
+    "react-dom": "^16.4.1",
     "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.3.1",
     "redux-mock-store": "^1.5.3"
   }
 }
