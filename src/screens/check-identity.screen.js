@@ -24,7 +24,7 @@ export class CheckIdentity extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ActivityIndicator />
+                <ActivityIndicator size="large" />
                 <StatusBar barStyle="default" />
             </View>
         );
