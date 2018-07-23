@@ -9,7 +9,12 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "lint": "standard",
+    "lint:verbose": "standard --verbose | snazzy",
+    "lint:fix": "standard --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest -- watch"
   },
   "jest": {
     "preset": "jest-expo",
@@ -19,6 +24,12 @@
     "setupFiles": [
       "<rootDir>/jest.setup.js"
     ]
+  },
+  "standard": {
+    "envs": [
+      "jest"
+    ],
+    "parser": "babel-eslint"
   },
   "dependencies": {
     "expo": "^27.0.1",
@@ -32,12 +43,15 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "jest-expo": "~27.0.0",
     "react-dom": "^16.4.1",
     "react-native-scripts": "1.14.0",
-    "redux-mock-store": "^1.5.3"
+    "redux-mock-store": "^1.5.3",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
   }
 }
