@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 import configureStore from 'redux-mock-store'
 
 import ConnectedCheckIdentity, { CheckIdentity } from './check-identity.screen'
+import { navigationConstants } from '../constants/navigation.constants'
 
 const mockStore = configureStore([ ])
 const navigation = { navigate: jest.fn() }
@@ -48,7 +49,7 @@ describe('check identity screen', () => {
 
     expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
-    expect(navigation.navigate).toHaveBeenCalledWith('Auth')
+    expect(navigation.navigate).toHaveBeenCalledWith(navigationConstants.AUTH)
   })
 
   it('should redirect to application stack when the user is logged in.', () => {
@@ -60,6 +61,6 @@ describe('check identity screen', () => {
 
     expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
-    expect(navigation.navigate).toHaveBeenCalledWith('App')
+    expect(navigation.navigate).toHaveBeenCalledWith(navigationConstants.APP)
   })
 })

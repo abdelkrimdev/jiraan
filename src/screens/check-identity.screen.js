@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { authenticationActions } from '../actions/authentication.actions'
+import { navigationConstants } from '../constants/navigation.constants'
 
 export class CheckIdentity extends Component {
     static propTypes = {
@@ -17,7 +18,7 @@ export class CheckIdentity extends Component {
 
     componentDidMount () {
       this.props.navigation.navigate(
-        this.props.authenticatedUser ? 'App' : 'Auth'
+        this.props.authenticatedUser ? navigationConstants.APP : navigationConstants.AUTH
       )
     }
 
