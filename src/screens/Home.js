@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { connect } from 'react-redux'
 
 export class Home extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Text>Home Screen</Text>
@@ -13,20 +13,20 @@ export class Home extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  
-});
+
+})
 
 const mapDispatchToProps = {
-  
-};
+
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

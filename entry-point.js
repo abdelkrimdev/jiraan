@@ -1,8 +1,8 @@
-import { KeepAwake, registerRootComponent } from 'expo';
-import App from './src/App';
+import { KeepAwake, registerRootComponent } from 'expo'
+import App from './src/App'
 
 if (process.env.NODE_ENV === 'development') {
-    KeepAwake.activate();
+  KeepAwake.activate()
 }
 
-registerRootComponent(App);
+registerRootComponent(App)
