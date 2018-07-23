@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { connect } from 'react-redux'
 
-export class SignIn extends Component {
+export class Login extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text>SignIn Screen</Text>
+        <Text>Login Screen</Text>
       </View>
     )
   }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

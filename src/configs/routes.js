@@ -3,12 +3,12 @@ import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
 import { navigationConstants } from '../constants/navigation.constants'
 
 import CheckIdentityScreen from '../screens/check-identity.screen'
-import SignIn from '../screens/SignIn'
+import LoginScreen from '../screens/login.screen'
 import Home from '../screens/Home'
 
 const authenticationStack = createStackNavigator(
-  { SignIn: SignIn },
-  { initialRouteName: 'SignIn' }
+  { [navigationConstants.LOGIN]: LoginScreen },
+  { initialRouteName: navigationConstants.LOGIN }
 )
 
 const applicationStack = createStackNavigator(
