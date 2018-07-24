@@ -7,29 +7,29 @@ import { authenticationActions } from '../actions/authentication.actions'
 import { navigationConstants } from '../constants/navigation.constants'
 
 export class CheckIdentity extends Component {
-    static propTypes = {
-      authenticatedUser: PropTypes.object,
-      getAuthenticatedUser: PropTypes.func.isRequired
-    }
+  static propTypes = {
+    authenticatedUser: PropTypes.object,
+    getAuthenticatedUser: PropTypes.func.isRequired
+  }
 
-    componentWillMount () {
-      this.props.getAuthenticatedUser()
-    }
+  componentWillMount () {
+    this.props.getAuthenticatedUser()
+  }
 
-    componentDidMount () {
-      this.props.navigation.navigate(
-        this.props.authenticatedUser ? navigationConstants.APP : navigationConstants.AUTH
-      )
-    }
+  componentDidMount () {
+    this.props.navigation.navigate(
+      this.props.authenticatedUser ? navigationConstants.APP : navigationConstants.AUTH
+    )
+  }
 
-    render () {
-      return (
-        <View style={styles.container}>
-          <ActivityIndicator size='large' />
-          <StatusBar barStyle='default' />
-        </View>
-      )
-    }
+  render () {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator size='large' />
+        <StatusBar barStyle='default' />
+      </View>
+    )
+  }
 }
 
 const mapStateToProps = (state) => {
