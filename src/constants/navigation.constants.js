@@ -1,6 +1,6 @@
 export const navigationConstants = {
   // Switch Navigator Keys
-  CHECK: 'Check',
+  SPLASH: 'Splash',
   AUTH: 'Auth',
   APP: 'App',
   // Authentication Stack Keys

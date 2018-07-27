@@ -2,7 +2,7 @@ import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
 
 import { navigationConstants } from '../constants/navigation.constants'
 
-import CheckIdentityScreen from '../screens/check-identity.screen'
+import SplashScreen from '../screens/splash.screen'
 import LoginScreen from '../screens/login.screen'
 import Home from '../screens/Home'
 
@@ -18,11 +18,11 @@ const applicationStack = createStackNavigator(
 
 const routes = createSwitchNavigator(
   {
-    [navigationConstants.CHECK]: CheckIdentityScreen,
+    [navigationConstants.SPLASH]: SplashScreen,
     [navigationConstants.AUTH]: authenticationStack,
     [navigationConstants.APP]: applicationStack
   },
-  { initialRouteName: navigationConstants.CHECK }
+  { initialRouteName: navigationConstants.SPLASH }
 )
 
 export default routes

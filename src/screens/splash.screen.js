@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { authenticationActions } from '../actions/authentication.actions'
 import { navigationConstants } from '../constants/navigation.constants'
 
-export class CheckIdentity extends Component {
+export class Splash extends Component {
   static propTypes = {
     authenticatedUser: PropTypes.object,
     getAuthenticatedUser: PropTypes.func.isRequired
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CheckIdentity)
+export default connect(mapStateToProps, mapDispatchToProps)(Splash)

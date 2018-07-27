@@ -2,20 +2,20 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import configureStore from 'redux-mock-store'
 
-import ConnectedCheckIdentity, { CheckIdentity } from './check-identity.screen'
+import ConnectedSplash, { Splash } from './splash.screen'
 import { navigationConstants } from '../constants/navigation.constants'
 
 const mockStore = configureStore([ ])
 const navigation = { navigate: jest.fn() }
 
-describe('check identity screen', () => {
+describe('splash screen', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
 
   it('should render without crashing.', () => {
     const wrapper = shallow(
-      <CheckIdentity getAuthenticatedUser={jest.fn()} navigation={navigation} />
+      <Splash getAuthenticatedUser={jest.fn()} navigation={navigation} />
     )
 
     expect(wrapper).toBeDefined()
@@ -23,7 +23,7 @@ describe('check identity screen', () => {
 
   it('should render correctly.', () => {
     const wrapper = shallow(
-      <CheckIdentity getAuthenticatedUser={jest.fn()} navigation={navigation} />
+      <Splash getAuthenticatedUser={jest.fn()} navigation={navigation} />
     )
 
     expect(wrapper).toMatchSnapshot()
@@ -34,7 +34,7 @@ describe('check identity screen', () => {
       currentUser: { data: null }
     })
 
-    const container = shallow(<ConnectedCheckIdentity navigation={navigation} store={store} />).dive()
+    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
 
     expect(container).toBeDefined()
     expect(store.getActions()).toMatchSnapshot()
@@ -45,7 +45,7 @@ describe('check identity screen', () => {
       currentUser: { data: null }
     })
 
-    const container = shallow(<ConnectedCheckIdentity navigation={navigation} store={store} />).dive()
+    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
 
     expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
@@ -57,7 +57,7 @@ describe('check identity screen', () => {
       currentUser: { data: { } }
     })
 
-    const container = shallow(<ConnectedCheckIdentity navigation={navigation} store={store} />).dive()
+    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
 
     expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
