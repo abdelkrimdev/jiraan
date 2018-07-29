@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input field component should have a default value for the autoCapitalize property. 1`] = `"none"`;
+
+exports[`input field component should have a default value for the keyboardType property. 1`] = `"default"`;
+
+exports[`input field component should have a default value for the style property. 1`] = `
+Object {
+  "fontSize": 18,
+  "paddingBottom": 24,
+  "width": "100%",
+}
+`;
+
+exports[`input field component should render correctly. 1`] = `
+<TextInput
+  allowFontScaling={true}
+  autoCapitalize="none"
+  autoCorrect={false}
+  keyboardType="default"
+  placeholder="put somrthing here..."
+  secureTextEntry={false}
+  style={
+    Object {
+      "fontSize": 18,
+      "paddingBottom": 24,
+      "width": "100%",
+    }
+  }
+/>
+`;
