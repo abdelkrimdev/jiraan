@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import { Login } from './login.screen'
 
-describe('check identity screen', () => {
+describe('login screen', () => {
   it('should render without crashing.', () => {
     const wrapper = shallow(
       <Login />

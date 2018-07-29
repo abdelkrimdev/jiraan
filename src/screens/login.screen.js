@@ -24,6 +24,10 @@ export class Login extends Component {
     }
   }
 
+  handleNavigation = () => {
+    this.props.navigation.navigate(navigationConstants.REGISTER)
+  }
+
   render () {
     const { user } = this.props
     return (
@@ -42,6 +46,11 @@ export class Login extends Component {
         <Button
           title='Sign In'
           onPress={this.handleSignIn}
+          color={themeConstants.PRIMARY_COLOR}
+        />
+        <Button
+          title='I don`t have an account'
+          onPress={this.handleNavigation}
           color={themeConstants.PRIMARY_COLOR}
         />
       </View>
