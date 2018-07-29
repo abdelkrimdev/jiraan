@@ -3,12 +3,16 @@ import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
 import { navigationConstants } from '../constants/navigation.constants'
 import { themeConstants } from '../constants/theme.constants'
 
-import SplashScreen from '../screens/splash.screen'
+import CreateAccountScreen from '../screens/create-account.screen'
+import HomeScreen from '../screens/home.screen'
 import LoginScreen from '../screens/login.screen'
-import Home from '../screens/Home'
+import SplashScreen from '../screens/splash.screen'
 
 const authenticationStack = createStackNavigator(
-  { [navigationConstants.LOGIN]: LoginScreen },
+  {
+    [navigationConstants.LOGIN]: LoginScreen,
+    [navigationConstants.REGISTER]: CreateAccountScreen
+  },
   {
     initialRouteName: navigationConstants.LOGIN,
     navigationOptions: {
@@ -24,8 +28,10 @@ const authenticationStack = createStackNavigator(
 )
 
 const applicationStack = createStackNavigator(
-  { Home: Home },
-  { initialRouteName: 'Home' }
+  {
+    [navigationConstants.HOME]: HomeScreen
+  },
+  { initialRouteName: navigationConstants.HOME }
 )
 
 const routes = createSwitchNavigator(
