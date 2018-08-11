@@ -1,9 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import configureStore from 'redux-mock-store'
 
-import { Splash } from './splash.screen'
+import ConnectedSplash, { Splash } from './splash.screen'
 import { navigationConstants } from '../constants/navigation.constants'
 
+const mockStore = configureStore([ ])
 const navigation = { navigate: jest.fn() }
 
 describe('splash screen', () => {
@@ -21,6 +23,16 @@ describe('splash screen', () => {
     const wrapper = shallow(<Splash />)
 
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('should connect to the store without crashing.', () => {
+    const store = mockStore({
+      currentUser: { data: { } }
+    })
+
+    const container = shallow(<ConnectedSplash store={store} />).dive()
+
+    expect(container).toBeDefined()
   })
 
   it('should redirect to authentication stack when the user is not logged in.', () => {
