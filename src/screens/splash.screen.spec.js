@@ -1,11 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import configureStore from 'redux-mock-store'
 
-import ConnectedSplash, { Splash } from './splash.screen'
+import { Splash } from './splash.screen'
 import { navigationConstants } from '../constants/navigation.constants'
 
-const mockStore = configureStore([ ])
 const navigation = { navigate: jest.fn() }
 
 describe('splash screen', () => {
@@ -14,52 +12,29 @@ describe('splash screen', () => {
   })
 
   it('should render without crashing.', () => {
-    const wrapper = shallow(
-      <Splash getAuthenticatedUser={jest.fn()} navigation={navigation} />
-    )
+    const wrapper = shallow(<Splash />)
 
     expect(wrapper).toBeDefined()
   })
 
   it('should render correctly.', () => {
-    const wrapper = shallow(
-      <Splash getAuthenticatedUser={jest.fn()} navigation={navigation} />
-    )
+    const wrapper = shallow(<Splash />)
 
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should dispatch the getCurrentUser action when component is mounting.', () => {
-    const store = mockStore({
-      currentUser: { data: null }
-    })
-
-    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
-
-    expect(container).toBeDefined()
-    expect(store.getActions()).toMatchSnapshot()
-  })
-
   it('should redirect to authentication stack when the user is not logged in.', () => {
-    const store = mockStore({
-      currentUser: { data: null }
-    })
+    const wrapper = shallow(<Splash navigation={navigation} />)
+    wrapper.setProps({ authenticatedUser: null })
 
-    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
-
-    expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
     expect(navigation.navigate).toHaveBeenCalledWith(navigationConstants.AUTH)
   })
 
   it('should redirect to application stack when the user is logged in.', () => {
-    const store = mockStore({
-      currentUser: { data: { } }
-    })
+    const wrapper = shallow(<Splash navigation={navigation} />)
+    wrapper.setProps({ authenticatedUser: { } })
 
-    const container = shallow(<ConnectedSplash navigation={navigation} store={store} />).dive()
-
-    expect(container).toBeDefined()
     expect(navigation.navigate).toHaveBeenCalled()
     expect(navigation.navigate).toHaveBeenCalledWith(navigationConstants.APP)
   })

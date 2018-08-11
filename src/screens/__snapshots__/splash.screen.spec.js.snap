@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`splash screen should dispatch the getCurrentUser action when component is mounting. 1`] = `
-Array [
-  Object {
-    "type": "FIRE_GET_CURRENT_USER_ACTION",
-    "user": null,
-  },
-]
-`;
-
 exports[`splash screen should render correctly. 1`] = `
 <Component
   style={

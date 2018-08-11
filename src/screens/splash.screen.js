@@ -3,22 +3,16 @@ import { ActivityIndicator, StatusBar, StyleSheet, View } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { authenticationActions } from '../actions/authentication.actions'
 import { navigationConstants } from '../constants/navigation.constants'
 
 export class Splash extends Component {
   static propTypes = {
-    authenticatedUser: PropTypes.object,
-    getAuthenticatedUser: PropTypes.func.isRequired
+    authenticatedUser: PropTypes.object
   }
 
-  componentWillMount () {
-    this.props.getAuthenticatedUser()
-  }
-
-  componentDidMount () {
+  componentWillUpdate (nextProps) {
     this.props.navigation.navigate(
-      this.props.authenticatedUser ? navigationConstants.APP : navigationConstants.AUTH
+      nextProps.authenticatedUser ? navigationConstants.APP : navigationConstants.AUTH
     )
   }
 
@@ -37,12 +31,6 @@ const mapStateToProps = (state) => {
   return { authenticatedUser: data }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getAuthenticatedUser: () => dispatch(authenticationActions.getCurrentUser())
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -51,4 +39,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash)
+export default connect(mapStateToProps)(Splash)
