@@ -8,8 +8,8 @@ export const signIn = (email, password) => {
   return firebase.auth().signInWithEmailAndPassword(email, password)
 }
 
-export const getCurrentUser = () => {
-  return firebase.auth().currentUser
+export const getCurrentUser = (getUser) => {
+  return firebase.auth().onAuthStateChanged(getUser)
 }
 
 export const signOut = () => {
