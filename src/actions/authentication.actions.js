@@ -49,9 +49,14 @@ export const authenticationActions = {
     }
   },
   getCurrentUser: () => {
-    return {
-      type: authenticationConstants.USER_CURRENT_ACTION,
-      user: getCurrentUser()
+    return (dispatch) => {
+      getCurrentUser((user) => {
+        dispatch(current(user))
+      })
+    }
+
+    function current (user) {
+      return { type: authenticationConstants.USER_CURRENT_ACTION, user }
     }
   },
   signOut: () => {

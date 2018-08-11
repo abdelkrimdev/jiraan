@@ -87,9 +87,13 @@ describe('authentication actions', () => {
   it('should get the current user.', () => {
     const store = mockStore({ })
 
-    getCurrentUser.mockReturnValue({
-      displayName: 'username',
-      email: 'user@somewhere.com'
+    getCurrentUser.mockImplementation(callback => {
+      const currentUser = {
+        displayName: 'username',
+        email: 'user@somewhere.com'
+      }
+
+      callback(currentUser)
     })
 
     store.dispatch(authenticationActions.getCurrentUser())
