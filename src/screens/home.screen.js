@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
-import { Button, StyleSheet, View } from 'react-native'
+import { Button, Text, StyleSheet, View } from 'react-native'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { authenticationActions } from '../actions/authentication.actions'
+import { navigationConstants } from '../constants/navigation.constants'
 import { themeConstants } from '../constants/theme.constants'
 
 export class Home extends Component {
+  static propTypes = {
+    authenticatedUser: PropTypes.object,
+    signOut: PropTypes.func
+  }
+
   handleSignOut = () => {
     this.props.signOut()
+    this.props.navigation.navigate(navigationConstants.AUTH)
   }
 
   render () {
     return (
       <View style={styles.container}>
+        <Text>Hello: {this.props.authenticatedUser.email}</Text>
         <Button
           title='Sign Out'
           onPress={this.handleSignOut}
@@ -23,9 +32,10 @@ export class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-
-})
+const mapStateToProps = (state) => {
+  const { data } = state.currentUser
+  return { authenticatedUser: data }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -36,7 +46,6 @@ const mapDispatchToProps = (dispatch) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
   }
