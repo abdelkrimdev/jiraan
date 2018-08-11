@@ -6,6 +6,8 @@ import { createUser } from '../reducers/create-user.reducer'
 import { loginUser } from '../reducers/login-user.reducer'
 import { currentUser } from '../reducers/current-user.reducer'
 
+import { authenticationActions } from '../actions/authentication.actions'
+
 const store = createStore(
   combineReducers({
     createUser,
@@ -17,5 +19,7 @@ const store = createStore(
     thunkMiddleware
   )
 )
+
+store.dispatch(authenticationActions.getCurrentUser())
 
 export default store
