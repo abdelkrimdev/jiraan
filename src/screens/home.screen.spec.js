@@ -23,7 +23,7 @@ describe('home screen', () => {
 
   it('should connect to the store without crashing.', () => {
     const store = mockStore({
-      currentUser: { data: { } }
+      currentUser: { user: { } }
     })
 
     const container = shallow(<ConnectedHome store={store} />).dive()
@@ -33,7 +33,7 @@ describe('home screen', () => {
 
   it('should logout the user.', () => {
     const store = mockStore({
-      currentUser: { data: { } }
+      currentUser: { user: { } }
     })
 
     const container = shallow(<ConnectedHome navigation={navigation} store={store} />).dive()

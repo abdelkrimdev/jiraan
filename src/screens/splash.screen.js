@@ -27,8 +27,8 @@ export class Splash extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { data } = state.currentUser
-  return { authenticatedUser: data }
+  const { user } = state.currentUser
+  return { authenticatedUser: user }
 }
 
 const styles = StyleSheet.create({

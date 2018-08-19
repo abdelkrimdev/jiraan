@@ -27,7 +27,7 @@ describe('splash screen', () => {
 
   it('should connect to the store without crashing.', () => {
     const store = mockStore({
-      currentUser: { data: { } }
+      currentUser: { user: { } }
     })
 
     const container = shallow(<ConnectedSplash store={store} />).dive()

@@ -33,8 +33,8 @@ export class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { data } = state.currentUser
-  return { authenticatedUser: data }
+  const { user } = state.currentUser
+  return { authenticatedUser: user }
 }
 
 const mapDispatchToProps = (dispatch) => {
