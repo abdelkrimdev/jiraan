@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`authentication actions should capture get current user errors. 1`] = `
+Array [
+  Object {
+    "error": Object {
+      "code": "error/code",
+      "message": "Get Current User Error Message",
+    },
+    "type": "FETCH_GET_CURRENT_USER_FAILURE",
+  },
+]
+`;
+
 exports[`authentication actions should capture sign-in errors. 1`] = `
 Array [
   Object {
@@ -48,7 +60,7 @@ Array [
 exports[`authentication actions should get the current user. 1`] = `
 Array [
   Object {
-    "type": "FIRE_GET_CURRENT_USER_ACTION",
+    "type": "FETCH_GET_CURRENT_USER_SUCCESS",
     "user": Object {
       "displayName": "username",
       "email": "user@somewhere.com",

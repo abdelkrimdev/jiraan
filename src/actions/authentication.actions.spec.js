@@ -87,13 +87,31 @@ describe('authentication actions', () => {
   it('should get the current user.', () => {
     const store = mockStore({ })
 
-    getCurrentUser.mockImplementation(callback => {
+    getCurrentUser.mockImplementation((success, failure) => {
       const currentUser = {
         displayName: 'username',
         email: 'user@somewhere.com'
       }
 
-      callback(currentUser)
+      success(currentUser)
+    })
+
+    store.dispatch(authenticationActions.getCurrentUser())
+
+    expect(getCurrentUser).toHaveBeenCalled()
+    expect(store.getActions()).toMatchSnapshot()
+  })
+
+  it('should capture get current user errors.', () => {
+    const store = mockStore({ })
+
+    getCurrentUser.mockImplementation((success, failure) => {
+      const error = {
+        code: 'error/code',
+        message: 'Get Current User Error Message'
+      }
+
+      failure(error)
     })
 
     store.dispatch(authenticationActions.getCurrentUser())

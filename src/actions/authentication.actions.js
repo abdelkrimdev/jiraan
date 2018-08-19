@@ -51,12 +51,17 @@ export const authenticationActions = {
   getCurrentUser: () => {
     return (dispatch) => {
       getCurrentUser((user) => {
-        dispatch(current(user))
+        dispatch(success(user))
+      }, (error) => {
+        dispatch(failure(error))
       })
     }
 
-    function current (user) {
-      return { type: authenticationConstants.USER_CURRENT_ACTION, user }
+    function success (user) {
+      return { type: authenticationConstants.USER_CURRENT_SUCCESS, user }
+    }
+    function failure (error) {
+      return { type: authenticationConstants.USER_CURRENT_FAILURE, error }
     }
   },
   signOut: () => {
