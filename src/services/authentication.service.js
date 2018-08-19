@@ -8,8 +8,8 @@ export const signIn = (email, password) => {
   return auth.signInWithEmailAndPassword(email, password)
 }
 
-export const getCurrentUser = (getUser) => {
-  return auth.onAuthStateChanged(getUser)
+export const getCurrentUser = (getUser, catchError) => {
+  return auth.onAuthStateChanged(getUser, catchError)
 }
 
 export const signOut = () => {
