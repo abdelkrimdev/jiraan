@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`current user reducer should handle get current user action. 1`] = `
+exports[`current user reducer should handle get current user failure. 1`] = `
 Object {
-  "data": Object {
+  "error": Object {
+    "code": "error/code",
+    "message": "Get Current User Error Message",
+  },
+}
+`;
+
+exports[`current user reducer should handle get current user success. 1`] = `
+Object {
+  "user": Object {
     "displayName": "username",
     "email": "user@somewhere.com",
   },

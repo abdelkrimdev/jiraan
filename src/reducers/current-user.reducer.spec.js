@@ -15,9 +15,9 @@ describe('current user reducer', () => {
     expect(currentUser(state, action)).toMatchSnapshot()
   })
 
-  it('should handle get current user action.', () => {
+  it('should handle get current user success.', () => {
     const action = {
-      type: authenticationConstants.USER_CURRENT_ACTION,
+      type: authenticationConstants.USER_CURRENT_SUCCESS,
       user: {
         displayName: 'username',
         email: 'user@somewhere.com'
@@ -27,8 +27,20 @@ describe('current user reducer', () => {
     expect(currentUser({ }, action)).toMatchSnapshot()
   })
 
+  it('should handle get current user failure.', () => {
+    const action = {
+      type: authenticationConstants.USER_CURRENT_FAILURE,
+      error: {
+        code: 'error/code',
+        message: 'Get Current User Error Message'
+      }
+    }
+
+    expect(currentUser({ }, action)).toMatchSnapshot()
+  })
+
   it('should handle user logout action.', () => {
-    const state = { data: 'current user data' }
+    const state = { user: 'current user data' }
     const action = { type: authenticationConstants.USER_LOGOUT_ACTION }
 
     expect(currentUser(state, action)).toMatchSnapshot()
