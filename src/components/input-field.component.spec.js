@@ -66,38 +66,6 @@ describe('input field component', () => {
     expect(autoCorrectFromProps).toEqual(autoCorrect)
   })
 
-  it('should have a default value for the secureTextEntry property.', () => {
-    const wrapper = shallow(<InputField />)
-    const autoCapitalizeFromProps = wrapper.prop('secureTextEntry')
-
-    expect(autoCapitalizeFromProps).toBeFalsy()
-  })
-
-  it('should set the secureTextEntry property.', () => {
-    const secureTextEntry = true
-
-    const wrapper = shallow(<InputField secureTextEntry={secureTextEntry} />)
-    const secureTextEntryFromProps = wrapper.prop('secureTextEntry')
-
-    expect(secureTextEntryFromProps).toEqual(secureTextEntry)
-  })
-
-  it('should have a default value for the keyboardType property.', () => {
-    const wrapper = shallow(<InputField />)
-    const autoCapitalizeFromProps = wrapper.prop('keyboardType')
-
-    expect(autoCapitalizeFromProps).toMatchSnapshot()
-  })
-
-  it('should set the keyboardType property.', () => {
-    const keyboardType = 'email-address'
-
-    const wrapper = shallow(<InputField keyboardType={keyboardType} />)
-    const keyboardTypeFromProps = wrapper.prop('keyboardType')
-
-    expect(keyboardTypeFromProps).toEqual(keyboardType)
-  })
-
   it('should have a default value for the style property.', () => {
     const wrapper = shallow(<InputField />)
     const autoCapitalizeFromProps = wrapper.prop('style')

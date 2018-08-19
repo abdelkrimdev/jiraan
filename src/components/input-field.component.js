@@ -1,14 +1,12 @@
 import React from 'react'
 import { StyleSheet, TextInput } from 'react-native'
 
-const InputField = ({placeholder, onChangeText, autoCapitalize, autoCorrect, secureTextEntry, keyboardType, style}) => (
-  <TextInput
+const InputField = ({placeholder, onChangeText, autoCapitalize, autoCorrect, style, ...props}) => (
+  <TextInput {...props}
     placeholder={placeholder}
     onChangeText={onChangeText}
     autoCapitalize={autoCapitalize === undefined ? 'none' : autoCapitalize}
     autoCorrect={autoCorrect === undefined ? false : autoCorrect}
-    secureTextEntry={secureTextEntry === undefined ? false : secureTextEntry}
-    keyboardType={keyboardType === undefined ? 'default' : keyboardType}
     style={style === undefined ? styles.inputField : style}
   />
 )
