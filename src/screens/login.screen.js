@@ -17,6 +17,12 @@ export class Login extends Component {
     password: ''
   }
 
+  componentWillUpdate (nextProps) {
+    if (nextProps.user) {
+      this.props.navigation.navigate(navigationConstants.APP)
+    }
+  }
+
   handleSignIn = () => {
     const { email, password } = this.state
     if (email && password) {
@@ -29,10 +35,8 @@ export class Login extends Component {
   }
 
   render () {
-    const { user } = this.props
     return (
       <View style={styles.container}>
-        {user && this.props.navigation.navigate(navigationConstants.APP)}
         <InputField
           keyboardType='email-address'
           placeholder='my-email@somewhere.com'

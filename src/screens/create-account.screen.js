@@ -18,6 +18,12 @@ export class CreateAccount extends Component {
     password: ''
   }
 
+  componentWillUpdate (nextProps) {
+    if (nextProps.user) {
+      this.props.navigation.navigate(navigationConstants.APP)
+    }
+  }
+
   handleSignUp = () => {
     const { email, password } = this.state
     if (email && password) {
@@ -26,10 +32,8 @@ export class CreateAccount extends Component {
   }
 
   render () {
-    const { user } = this.props
     return (
       <View style={styles.container}>
-        {user && this.props.navigation.navigate(navigationConstants.APP)}
         <InputField
           placeholder='my-username'
           onChangeText={(username) => this.setState({username})}
