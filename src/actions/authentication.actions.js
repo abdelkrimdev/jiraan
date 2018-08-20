@@ -65,7 +65,26 @@ export const authenticationActions = {
     }
   },
   signOut: () => {
-    signOut()
-    return { type: authenticationConstants.USER_LOGOUT_ACTION }
+    return async (dispatch) => {
+      try {
+        dispatch(request())
+
+        await signOut()
+
+        dispatch(success())
+      } catch (error) {
+        dispatch(failure(error))
+      }
+    }
+
+    function request () {
+      return { type: authenticationConstants.USER_LOGOUT_REQUEST }
+    }
+    function success () {
+      return { type: authenticationConstants.USER_LOGOUT_SUCCESS }
+    }
+    function failure (error) {
+      return { type: authenticationConstants.USER_LOGOUT_FAILURE, error }
+    }
   }
 }

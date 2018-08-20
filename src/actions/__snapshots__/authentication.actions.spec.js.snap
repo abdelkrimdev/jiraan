@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`authentication actions should capture get current user errors. 1`] = `
+exports[`authentication actions should capture get-current-user errors. 1`] = `
 Array [
   Object {
     "error": Object {
@@ -23,6 +23,21 @@ Array [
       "message": "Login User Error Message",
     },
     "type": "FETCH_LOGIN_USER_FAILURE",
+  },
+]
+`;
+
+exports[`authentication actions should capture sign-out errors. 1`] = `
+Array [
+  Object {
+    "type": "FETCH_LOGOUT_USER_REQUEST",
+  },
+  Object {
+    "error": Object {
+      "code": "error/code",
+      "message": "Sign Out User Error Message",
+    },
+    "type": "FETCH_LOGOUT_USER_FAILURE",
   },
 ]
 `;
@@ -87,7 +102,10 @@ Array [
 exports[`authentication actions should logout the user. 1`] = `
 Array [
   Object {
-    "type": "FIRE_LOGOUT_USER_ACTION",
+    "type": "FETCH_LOGOUT_USER_REQUEST",
+  },
+  Object {
+    "type": "FETCH_LOGOUT_USER_SUCCESS",
   },
 ]
 `;

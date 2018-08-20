@@ -85,7 +85,7 @@ describe('authentication actions', () => {
   })
 
   it('should get the current user.', () => {
-    const store = mockStore({ })
+    const store = mockStore()
 
     getCurrentUser.mockImplementation((success, failure) => {
       const currentUser = {
@@ -102,8 +102,8 @@ describe('authentication actions', () => {
     expect(store.getActions()).toMatchSnapshot()
   })
 
-  it('should capture get current user errors.', () => {
-    const store = mockStore({ })
+  it('should capture get-current-user errors.', () => {
+    const store = mockStore()
 
     getCurrentUser.mockImplementation((success, failure) => {
       const error = {
@@ -120,10 +120,26 @@ describe('authentication actions', () => {
     expect(store.getActions()).toMatchSnapshot()
   })
 
-  it('should logout the user.', () => {
-    const store = mockStore({ })
+  it('should logout the user.', async () => {
+    const store = mockStore()
 
-    store.dispatch(authenticationActions.signOut())
+    signOut.mockResolvedValueOnce()
+
+    await store.dispatch(authenticationActions.signOut())
+
+    expect(signOut).toHaveBeenCalled()
+    expect(store.getActions()).toMatchSnapshot()
+  })
+
+  it('should capture sign-out errors.', async () => {
+    const store = mockStore()
+
+    signOut.mockRejectedValueOnce({
+      code: 'error/code',
+      message: 'Sign Out User Error Message'
+    })
+
+    await store.dispatch(authenticationActions.signOut())
 
     expect(signOut).toHaveBeenCalled()
     expect(store.getActions()).toMatchSnapshot()
