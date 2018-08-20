@@ -3,7 +3,7 @@
 exports[`home screen should logout the user. 1`] = `
 Array [
   Object {
-    "type": "FIRE_LOGOUT_USER_ACTION",
+    "type": "FETCH_LOGOUT_USER_REQUEST",
   },
 ]
 `;

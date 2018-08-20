@@ -1,11 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import configureStore from 'redux-mock-store'
+import thunkMiddleware from 'redux-thunk'
 
 import ConnectedHome, { Home } from './home.screen'
 import { navigationConstants } from '../constants/navigation.constants'
 
-const mockStore = configureStore([ ])
+const mockStore = configureStore([ thunkMiddleware ])
 const navigation = { navigate: jest.fn() }
 
 describe('home screen', () => {
