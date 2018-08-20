@@ -13,5 +13,5 @@ export const getCurrentUser = (getUser, catchError) => {
 }
 
 export const signOut = () => {
-  auth.signOut()
+  return auth.signOut()
 }
