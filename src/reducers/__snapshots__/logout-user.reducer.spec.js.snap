@@ -4,7 +4,7 @@ exports[`logout user reducer should handle logout user failure. 1`] = `
 Object {
   "error": Object {
     "code": "error/code",
-    "message": "logout User Error Message",
+    "message": "Logout User Error Message",
   },
   "fetching": false,
 }
