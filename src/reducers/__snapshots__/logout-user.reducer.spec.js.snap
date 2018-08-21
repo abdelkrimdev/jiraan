@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`logout user reducer should handle logout user failure. 1`] = `
+Object {
+  "error": Object {
+    "code": "error/code",
+    "message": "logout User Error Message",
+  },
+  "fetching": false,
+}
+`;
+
+exports[`logout user reducer should handle logout user request. 1`] = `
+Object {
+  "fetching": true,
+}
+`;
+
+exports[`logout user reducer should handle logout user success. 1`] = `
+Object {
+  "fetching": false,
+}
+`;
+
+exports[`logout user reducer should have initial state. 1`] = `Object {}`;
+
+exports[`logout user reducer should return the current state after receiving a dummy action. 1`] = `
+Object {
+  "data": "current state",
+}
+`;
