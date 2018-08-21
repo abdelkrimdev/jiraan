@@ -18,8 +18,6 @@ Object {
 }
 `;
 
-exports[`current user reducer should handle user logout action. 1`] = `Object {}`;
-
 exports[`current user reducer should have initial state. 1`] = `Object {}`;
 
 exports[`current user reducer should return the current state after receiving a dummy action. 1`] = `

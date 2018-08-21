@@ -38,11 +38,4 @@ describe('current user reducer', () => {
 
     expect(currentUser({ }, action)).toMatchSnapshot()
   })
-
-  it('should handle user logout action.', () => {
-    const state = { user: 'current user data' }
-    const action = { type: authenticationConstants.USER_LOGOUT_ACTION }
-
-    expect(currentUser(state, action)).toMatchSnapshot()
-  })
 })

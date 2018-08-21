@@ -6,8 +6,6 @@ export const currentUser = (state = { }, action) => {
       return { user: action.user }
     case authenticationConstants.USER_CURRENT_FAILURE:
       return { error: action.error }
-    case authenticationConstants.USER_LOGOUT_ACTION:
-      return { }
     default:
       return state
   }
