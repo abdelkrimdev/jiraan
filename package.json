@@ -14,7 +14,8 @@
     "lint:fix": "standard --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "storybook": "storybook start -p 7007"
   },
   "jest": {
     "preset": "jest-expo",
@@ -54,6 +55,13 @@
     "react-native-scripts": "1.14.0",
     "redux-mock-store": "^1.5.3",
     "snazzy": "^7.1.1",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "@storybook/react-native": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "prop-types": "^15.6.2"
   }
 }
